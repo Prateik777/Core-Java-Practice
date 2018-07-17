@@ -1,0 +1,31 @@
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class list_iterator_demo {
+
+	public static void main(String[] args) {
+
+		LinkedList l = new LinkedList();
+		l.add("Prateek");
+		l.add("Pratik");
+		l.add("Prateik7");
+		
+		System.out.println(l);
+		
+		ListIterator ltr = l.listIterator();
+		
+		while(ltr.hasNext()){
+			String s = (String)ltr.next();
+			if(s.equals("Prateek")){
+				ltr.remove();
+			}
+			if(s.equals("Pratik")){
+				ltr.set("7Prateik");
+			}
+			if(s.equals("Prateik7")){
+				ltr.add("Prateek");
+			}
+		}
+		System.out.println(ltr);
+	}
+}
