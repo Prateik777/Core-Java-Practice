@@ -1,0 +1,17 @@
+import java.util.TreeSet;
+
+public class TreeSet_demo {
+
+	public static void main(String[] args) {
+
+		TreeSet t = new TreeSet();
+		t.add("A");
+		t.add("B");
+		t.add("a");
+		t.add("Z");
+	//	t.add(new Integer(10)); 					Adding any heterogenous element in a TreeSet gives java.lang.ClassCastException 
+	//	t.add(null);								Adding null value in a TreeSet gives java.lang.NullPointerException. Adding null value is allowed in an empty TreeSet
+		System.out.println(t);
+	}
+
+}
