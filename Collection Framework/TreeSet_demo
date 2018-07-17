@@ -15,3 +15,7 @@ public class TreeSet_demo {
 	}
 
 }
+
+//TreeSet gives sorted output because it internally calls compareTo() method of Comparable interface.
+//"A".compareTo("B") If this gives negative value that means "A" comes before "Z". If it gives positive value then "A" comes after "Z"
+//If it returns 0 then it means both objects are same hence rejected since duplicate values are not allowed in Set
