@@ -1,0 +1,21 @@
+
+public class FixedDepositAccount implements Account {
+
+	AccountHelper helper = new AccountHelperImpl();
+	
+	@Override
+	public double calculateInterest(double amount) {
+		return amount * 10;
+	}
+
+	@Override
+	public void deposit(double amount) {
+		helper.deposit(amount);
+	}
+
+	@Override
+	public void withdraw(double amount) {
+		helper.withdraw(amount);
+	}
+
+}
