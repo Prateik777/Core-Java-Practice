@@ -1,0 +1,38 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class Animal implements Serializable{
+	String name;
+	int age;
+	
+	Animal(){
+		System.out.println("Animal class parameterless constructor");
+	}
+}
+
+class Dog extends Animal {
+	String name = "Pluto";
+	int age = 6;
+}
+
+public class SerializationInheritance_demo {
+
+	public static void main(String[] args)throws Exception {
+
+		Dog d = new Dog();
+		
+		FileOutputStream fos = new FileOutputStream("abc.txt");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		
+		oos.writeObject(d);
+		
+		FileInputStream fis = new FileInputStream("abc.txt");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		Dog d2 = (Dog) ois.readObject();
+		System.out.println(d2.name + " " + d2.age);
+	}
+
+}
