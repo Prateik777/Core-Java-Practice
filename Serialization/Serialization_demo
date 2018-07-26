@@ -7,6 +7,10 @@ import java.io.Serializable;
 class Dog implements Serializable{
 	int i = 10;
 	int j = 20;
+	transient int k = 30;			// If we don't want to store value of a particular data member in an object then we can declare that variable as transient. JVM ignores original value of transient variable during Serialization and save it's default value.
+	Static int l = 40;			// Static variables are not the part of the object so they don't participate in Serialization process.
+	transient static int m = 50;
+	transient final int n = 60;
 }
 
 public class Serialization_demo {
